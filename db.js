@@ -1,8 +1,7 @@
 const { Sequelize } = require ('sequelize');
 
-// root @Onepieceélegal2021
-// mysql_user semsenha
-const sequelize = new Sequelize('agenda', 'root', '@Onepieceélegal2021',{
+// configure your mysql_user | password
+const sequelize = new Sequelize('agenda', 'mysql_user', 'password',{
     host:'localhost',
     dialect:'mysql'
 });
