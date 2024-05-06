@@ -1,0 +1,16 @@
+Teste POST
+curl -X POST -H "Content-Type: application/json" -d "{\"nome\":\"teste\", \"email\":\"email@teste.com\", \"telefone\":\"11133355445\"}" http://localhost:3001/contatos
+
+{"nome":"Claudio", "email":"claudio@email.com", "fone":"1155667788"}
+
+Teste GET
+curl -X GET http://localhost:3001/contatos
+
+Teste GET 1 objeto
+curl -X GET http://localhost:3001/contatos/1
+
+Teste PUT - Atualizar
+curl -X PUT -H "Content-Type: application/json" -d "{\"nome\":\"Felipe\", \"email\":\"felipe@teste.com\", \"telefone\":\"11999999999\"}" http://localhost:3001/contatos/1
+
+Teste DELETE
+curl -X DELETE http://localhost:3001/contatos/3

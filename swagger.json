@@ -1,0 +1,156 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Documentação da API",
+    "version": "1.0.0",
+    "description": "Documentação automática da API utilizando Swagger"
+  },
+  "components": {
+    "schemas": {
+      "Contato": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "telefone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "required": [
+          "nome",
+          "telefone",
+          "email"
+        ]
+      }
+    }
+  },
+  "paths": {
+    "/contatos": {
+      "post": {
+        "summary": "Inserir um novo contato",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contato"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contato inserido com sucesso"
+          },
+          "400": {
+            "description": "Erro ao inserir o contato"
+          }
+        }
+      },
+      "get": {
+        "summary": "Buscar todos os contatos",
+        "responses": {
+          "200": {
+            "description": "Lista de contatos"
+          },
+          "400": {
+            "description": "Erro ao buscar os contatos"
+          }
+        }
+      }
+    },
+    "/contatos/{id}": {
+      "get": {
+        "summary": "Buscar um contato por ID",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do contato a ser buscado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contato encontrado"
+          },
+          "400": {
+            "description": "Erro ao buscar o contato"
+          },
+          "404": {
+            "description": "Contato não encontrado"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar contato",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do contato a ser atualizado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Contato"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contato atualizado com sucesso"
+          },
+          "400": {
+            "description": "Erro ao atualizar o contato"
+          },
+          "404": {
+            "description": "Contato não encontrado"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletar contato",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do contato a ser deletado",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contato deletado com sucesso"
+          },
+          "400": {
+            "description": "Erro ao deletar o contato"
+          },
+          "404": {
+            "description": "Contato não encontrado"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
