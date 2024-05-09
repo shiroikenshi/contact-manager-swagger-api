@@ -1,6 +1,0 @@
-npm install express
-npm install nodemon
-npm install sequelize
-npm install mysql2
-npm install swagger-ui-express@4.1.6
-npm install swagger-jsdoc@6.0.0
