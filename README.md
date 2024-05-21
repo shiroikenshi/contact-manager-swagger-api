@@ -1,6 +1,6 @@
 # <div align="center"><a href="/README.md">Português</a> | <a href="/README_EN.md">Inglês</a></div>
 <br><br>
-# Documentação da API Automatizada com Swagger
+# API de Agenda com Documentação Swagger Automatizada Swagger
 Este projeto implementa uma API RESTful para gerenciar contatos, utilizando Node.js, Express e Sequelize. A documentação da API é gerada automaticamente pelo Swagger, proporcionando uma maneira fácil e interativa de entender e interagir com os endpoints da API.
 
 ### Autor
